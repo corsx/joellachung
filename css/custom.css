@@ -271,6 +271,7 @@ to   { opacity: 1; }
 
 
 /* Portfolio image gallery */
+
 .gal {	
 	-webkit-column-count: 3; /* Chrome, Safari, Opera */
     -moz-column-count: 3; /* Firefox */
@@ -609,8 +610,18 @@ main {
 #mainNav .navbar-nav li.nav-item a.nav-link.active {
     color: #94AABB !important;
 }
+.hero-image {
+    width: 100%;
+    min-height: 600px;
+    background-image: url("../assets/minimalbackground2.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
 .masthead {
     background-color: #F6F5F1;
+    padding-bottom: 4rem !important;
 }
 .masthead h1 {
     font-family: 'Lora', serif !important;
@@ -625,17 +636,24 @@ main {
     font-weight: 400;
     font-style: normal;
     color: #272E38;
-    font-size: 1em;
-    line-height: 1.1em;
+    font-size: 1.3em !important;
+    line-height: 1.6em;
     letter-spacing: .06em;
-    text-transform: uppercase;
 }
-@media (max-width: 320px) {
+#masthead-subheading {
+    width: 667px;
+}
+@media (max-width: 676px) {
+    #masthead-subheading {
+        width: 90vw;
+    }
+}
+/* @media (max-width: 320px) {
     .masthead h1 {
       font-size: 13vw !important;
     }
     .masthead p {
-      font-size: 6vw !important;
+      font-size: 5vw !important;
     }
 }
 @media (max-width: 290px) {
@@ -645,7 +663,7 @@ main {
     .masthead p {
       font-size: 6vw !important;
     }
-}
+} */
   
 /* Prevent logo from being shifted */
 @media screen and (max-width: 719px) {
