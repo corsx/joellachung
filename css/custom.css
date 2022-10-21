@@ -12,6 +12,59 @@ body {
   min-height: 100vh;
   background-color: #1e2331 !important;
 }
+.fade-in {
+  animation: fadeIn ease 2.4s;
+  -webkit-animation: fadeIn ease 2.4s;
+  -moz-animation: fadeIn ease 2.4s;
+  -o-animation: fadeIn ease 2.4s;
+  -ms-animation: fadeIn ease 2.4s;
+}
+
+
+@keyframes fadeIn{
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
+
+@-moz-keyframes fadeIn {
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
+
+@-o-keyframes fadeIn {
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
+
+@-ms-keyframes fadeIn {
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
 
 /* #0B263D Prussian Blue
 /* #081F34 Oxford blue (deeper)
