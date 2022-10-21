@@ -125,3 +125,8 @@ $(document).on('click', '[data-toggle="lightbox"]', function(event) {
   $(this).ekkoLightbox();
 });
  
+function preloadImage(url)
+{
+    var img=new Image();
+    img.src=url;
+}
