@@ -159,6 +159,11 @@
     </nav>
 </header>
 <body>
+<div id="loading">
+  <img id="loading-image" src="path/to/ajax-loader.gif" alt="Loading..." />
+</div>
+
+
 <div class="fade-in">
   <noscript>You need to enable JavaScript to run this page.</noscript>
   <div class="hero-virtual text-center scroll-overlap">
@@ -723,6 +728,10 @@
     <!-- Custom JavaScript -->
     <script src="js/main.js"></script>
 
-
+    <script>
+      $(window).on('load', function () {
+        $('#loading').hide();
+      }) 
+    </script>
 </body>
 </html>
