@@ -28,14 +28,13 @@
         <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <!-- Bootstrap -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-    <!-- MDBootstrap 
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/5.0.0/mdb.min.css" rel="stylesheet"/>
     <!-- Custom CSS -->
         <link href="css/custom.css" rel="stylesheet" type="text/css">
     <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="css/bootstrap.min.css"> 
-    <!-- Justified Gallery -->
-        <link rel="stylesheet" href="css/justifiedGallery.css" />
+    <!-- LightGallery -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.0/css/lightgallery-bundle.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.0/css/lg-transitions.min.css"  />
     <!-- Font Awesome 
         <script src="https://kit.fontawesome.com/41287d8db0.js" crossorigin="anonymous"></script>-->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -75,6 +74,11 @@
           font-size: 1.5em; 
           font-family: "Roboto", sans-serif;
           font-weight: 600;
+        }
+        @media (min-width: 1400px) {
+          .modal .modal-content .modal-body {
+            padding-right: 1rem;
+          }
         }
         .modal .modal-content .modal-body .close-btn {
           color: #000; 
@@ -140,6 +144,70 @@
         .exit:hover {
           color: #000; 
         }
+        .lightgallery {
+          display: flex;
+          justify-content: center;
+          flex-wrap: wrap;
+          width: 100%;
+          margin: 0 auto;
+          height: auto;
+          padding-top: 13px;
+          background-color: #1e2331;
+        }
+        .lightgallery a {
+          height: 350px;
+          width: 350px;
+          margin: 13px;
+          overflow: hidden;
+        }
+        .lightgallery a img {
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+        }
+
+        .lightgallery-wrap {
+          position: relative;
+          height: 100%;
+          width: 100%;
+          left: 0;
+          top: 0;
+          bottom: 0;
+          right: 0;
+        }
+
+        .lightgallery-description {
+          position: absolute;
+          text-align: center;
+          padding-left: 1em;
+          padding-right: 1em;
+          padding-bottom: 0.7em;
+          padding-top: 0.5em;
+          width: 100%;
+          top: 96%;
+          left: 50%;
+          opacity: 0;
+          -webkit-transform: translate(-50%, -50%);
+          -moz-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+          -webkit-transition: all 0.3s ease-in-out 0s;
+          -moz-transition: all 0.3s ease-in-out 0s;
+          transition: all 0.3s ease-in-out 0s;
+          background: #0000008e;
+        }
+
+        .lightgallery-wrap p {
+          color: #fff;
+          font-family: "Inter Tight", sans-serif;
+          font-weight: 600;
+          font-size: 0.8em;
+        }
+
+        .lightgallery-wrap:hover .lightgallery-description {
+          visibility: visible;
+          opacity: 1;
+        }
+
         </style>
 </head>
 <!-- Navbar-->
@@ -159,10 +227,6 @@
     </nav>
 </header>
 <body>
-<div id="loading">
-  <img id="loading-image" src="path/to/ajax-loader.gif" alt="Loading..." />
-</div>
-
 
 <div class="fade-in">
   <noscript>You need to enable JavaScript to run this page.</noscript>
@@ -184,9 +248,7 @@
         </div>
       <div class="scroll-down"></div>
     </div>
-    
-    </div>
-
+  </div>
 <!-- Modal -->
 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
@@ -206,14 +268,12 @@
                       Virtual photography is achieved using the in-game photomode, a feature in video games that pauses the game and allows gamers to control the camera to take a screenshot under the right conditions. Depending on the game, the photomode can offer a various tools to further enhance the quality of the photo, such as depth of field, brightness and contrast, tint and saturation, and so forth.<p>
                     <p class="mb-5">  
                       Virtual photography provides one with the opportunity to not only exercise compostional techniques to weave an intriguing visual story but also capture a dramatic scene that might not be achievable in reality.<br>
-                    </p>
-                    
+                    </p>                    
                 </div>
               </div>
             </div>
           </div>
         </div>
-
       </div>
     </div>
   </div>
@@ -221,494 +281,210 @@
 
 <section class="scroll-overlap">
 
-<div id="virtual" class="container-fluid">
-      <div class="grid">
-        <div class="grid-sizer"></div>
+<div class="container-fluid">
+    <div class="lightgallery">
+      
+      <a href="images/virtual/control-directordeath.png"
+      data-sub-html="<h4>Control</h4>" >
+      <div class="lightgallery-wrap"><img src="images/virtual/control-directordeath.png" alt=""> <p class="lightgallery-description">Control</p></div>
+      </a>
+      
+      <a href="images/virtual/control-trial.png"
+      data-sub-html="<h4>Control</h4>" >
+      <div class="lightgallery-wrap"><img src="images/virtual/control-trial.png" alt=""><p class="lightgallery-description">Control</p></div>
+      </a>
 
-        <!-- Grid 1 -->
-        <div class="content">
-          <div class="grid-item" data-bs-toggle="modal" data-bs-target="#valGreenTower">
-            <div class="content-overlay-v2"></div>
-            <img src="images/virtual/valhalla-greentower.png"/>
-            <div class="content-details-v2 fadeIn-bottom">
-              <h3 class="content-title">Valhalla</h3>
-            </div>
-          </div>
-        </div>
-        <!-- Grid 2 -->
-        <div class="content">
-          <div class="grid-item" data-bs-toggle="modal" data-bs-target="#valBridge">
-            <div class="content-overlay-v2"></div>
-            <img src="images/virtual/valhalla-bridge.png"/>
-            <div class="content-details-v2 fadeIn-bottom">
-              <h3 class="content-title">Valhalla</h3>
-            </div>
-          </div>
-        </div>
-        <!-- Grid 3 -->
-        <div class="content">
-          <div class="grid-item" data-bs-toggle="modal" data-bs-target="#valBoat">
-            <div class="content-overlay-v2"></div>
-            <img src="images/virtual/valhalla-boatlake.png" />
-            <div class="content-details-v2 fadeIn-bottom">
-              <h3 class="content-title">Valhalla</h3>
-            </div>
-          </div>
-        </div>       
-        <!-- Grid 4 -->
-        <div class="content">
-          <div class="grid-item" data-bs-toggle="modal" data-bs-target="#ValRuinedColosseum">
-            <div class="content-overlay-v2"></div>
-            <img src="images/virtual/valhalla-ruinedcolosseum.png" />
-            <div class="content-details-v2 fadeIn-bottom">
-              <h3 class="content-title">Valhalla</h3>
-            </div>
-          </div>
-        </div>
-        <!-- Grid 5 -->
-        <div class="content">
-          <div class="grid-item" data-bs-toggle="modal" data-bs-target="#valTreeArch">
-            <div class="content-overlay-v2"></div>
-            <img src="images/virtual/valhalla-treearch.png" />
-            <div class="content-details-v2 fadeIn-bottom">
-              <h3 class="content-title">Valhalla</h3>
-            </div>
-          </div>
-        </div>
-        <!-- Grid 6 -->
-        <div class="content">
-          <div class="grid-item" data-bs-toggle="modal" data-bs-target="#valTreeInLight">
-            <div class="content-overlay-v2"></div>
-            <img src="images/virtual/valhalla-treeinlight.png" />
-            <div class="content-details-v2 fadeIn-bottom">
-              <h3 class="content-title">Valhalla</h3>
-            </div>
-          </div>
-        </div>
-        <!-- Grid -->
-        <div class="content">
-          <div class="grid-item" data-bs-toggle="modal" data-bs-target="#valApproachingStatue">
-            <div class="content-overlay-v2"></div>
-            <img src="images/virtual/valhalla-approachingstatue.png" />
-            <div class="content-details-v2 fadeIn-bottom">
-              <h3 class="content-title">Valhalla</h3>
-            </div>
-          </div>
-        </div>
-        <!-- Grid -->
-        <div class="content">
-          <div class="grid-item" data-bs-toggle="modal" data-bs-target="#valAttackingWolf">
-            <div class="content-overlay-v2"></div>
-            <img src="images/virtual/valhalla-attackingwolf.png" />
-            <div class="content-details-v2 fadeIn-bottom">
-              <h3 class="content-title">Valhalla</h3>
-            </div>
-          </div>
-        </div>
-        <!-- Grid -->
-        <div class="content">
-          <div class="grid-item" data-bs-toggle="modal" data-bs-target="#valBassimFight">
-            <div class="content-overlay-v2"></div>
-            <img src="images/virtual/valhalla-bassimfight.png" />
-            <div class="content-details-v2 fadeIn-bottom">
-              <h3 class="content-title">Valhalla</h3>
-            </div>
-          </div>
-        </div>
-        <!-- Grid -->
-        <div class="content">
-          <div class="grid-item" data-bs-toggle="modal" data-bs-target="#valBoat">
-            <div class="content-overlay-v2"></div>
-            <img src="images/virtual/valhalla-boat.png" />
-            <div class="content-details-v2 fadeIn-bottom">
-              <h3 class="content-title">Valhalla</h3>
-            </div>
-          </div>
-        </div>
-        <!-- Grid -->
-        <div class="content">
-          <div class="grid-item" data-bs-toggle="modal" data-bs-target="#valEastAnglia">
-            <div class="content-overlay-v2"></div>
-            <img src="images/virtual/valhalla-eastanglia.png" />
-            <div class="content-details-v2 fadeIn-bottom">
-              <h3 class="content-title">Valhalla</h3>
-            </div>
-          </div>
-        </div>
-        <!-- Grid -->
-        <div class="content">
-          <div class="grid-item" data-bs-toggle="modal" data-bs-target="#valGraveyardForest">
-            <div class="content-overlay-v2"></div>
-            <img src="images/virtual/valhalla-graveyardforest.png" />
-            <div class="content-details-v2 fadeIn-bottom">
-              <h3 class="content-title">Valhalla</h3>
-            </div>
-          </div>
-        </div>
-        <!-- Grid -->
-        <div class="content">
-          <div class="grid-item" data-bs-toggle="modal" data-bs-target="#valTwoWolves">
-            <div class="content-overlay-v2"></div>
-            <img src="images/virtual/valhalla-twowolves.png" />
-            <div class="content-details-v2 fadeIn-bottom">
-              <h3 class="content-title">Valhalla</h3>
-            </div>
-          </div>
-        </div>
-        <!-- Grid -->
-        <div class="content">
-          <div class="grid-item" data-bs-toggle="modal" data-bs-target="#valRabbit">
-            <div class="content-overlay-v2"></div>
-            <img src="images/virtual/valhalla-rabbit.png" />
-            <div class="content-details-v2 fadeIn-bottom">
-              <h3 class="content-title">Valhalla</h3>
-            </div>
-          </div>
-        </div>
-        <!-- Grid -->
-        <div class="content">
-          <div class="grid-item" data-bs-toggle="modal" data-bs-target="#valSpookyForest">
-            <div class="content-overlay-v2"></div>
-            <img src="images/virtual/valhalla-spookyforest.png" />
-            <div class="content-details-v2 fadeIn-bottom">
-              <h3 class="content-title">Valhalla</h3>
-            </div>
-          </div>
-        </div>
-        <!-- Grid -->
-        <div class="content">
-          <div class="grid-item" data-bs-toggle="modal" data-bs-target="#valWarWreckedVillage">
-            <div class="content-overlay-v2"></div>
-            <img src="images/virtual/valhalla-warwreckedvillage.png" />
-            <div class="content-details-v2 fadeIn-bottom">
-              <h3 class="content-title">Valhalla</h3>
-            </div>
-          </div>
-        </div>
-        <!-- Grid -->
-        <div class="content">
-          <div class="grid-item" data-bs-toggle="modal" data-bs-target="#valEivorFight">
-            <div class="content-overlay-v2"></div>
-            <img src="images/virtual/valhalla-eivorfight.jpg" />
-            <div class="content-details-v2 fadeIn-bottom">
-              <h3 class="content-title">Valhalla</h3>
-            </div>
-          </div>
-        </div>
-        <!-- Grid -->
-        <div class="content">
-          <div class="grid-item" data-bs-toggle="modal" data-bs-target="#valDog">
-            <div class="content-overlay-v2"></div>
-            <img src="images/virtual/valhalla-dog.jpg" />
-            <div class="content-details-v2 fadeIn-bottom">
-              <h3 class="content-title">Valhalla</h3>
-            </div>
-          </div>
-        </div>
-        <!-- Grid -->
-        <div class="content">
-          <div class="grid-item" data-bs-toggle="modal" data-bs-target="#valDoorway">
-            <div class="content-overlay-v2"></div>
-            <img src="images/virtual/valhalla-doorway.jpg" />
-            <div class="content-details-v2 fadeIn-bottom">
-              <h3 class="content-title">Valhalla</h3>
-            </div>
-          </div>
-        </div>
-        <!-- Grid -->
-        <div class="content">
-          <div class="grid-item" data-bs-toggle="modal" data-bs-target="#valMountainField">
-            <div class="content-overlay-v2"></div>
-            <img src="images/virtual/valhalla-mountainfield.png" />
-            <div class="content-details-v2 fadeIn-bottom">
-              <h3 class="content-title">Valhalla</h3>
-            </div>
-          </div>
-        </div>
-        <!-- Grid -->
-        <div class="content">
-          <div class="grid-item" data-bs-toggle="modal" data-bs-target="#valSunsetBoatLake">
-            <div class="content-overlay-v2"></div>
-            <img src="images/virtual/valhalla-sunsetboatlake.png" />
-            <div class="content-details-v2 fadeIn-bottom">
-              <h3 class="content-title">Valhalla</h3>
-            </div>
-          </div>
-        </div>
-        <!-- Grid -->
-        <div class="content">
-          <div class="grid-item" data-bs-toggle="modal" data-bs-target="#valMarshCrossing">
-            <div class="content-overlay-v2"></div>
-            <img src="images/virtual/valhalla-marshcrossing.png" />
-            <div class="content-details-v2 fadeIn-bottom">
-              <h3 class="content-title">Valhalla</h3>
-            </div>
-          </div>
-        </div>
-        <!-- Grid -->
-        <div class="content">
-          <div class="grid-item" data-bs-toggle="modal" data-bs-target="#valFightDruid">
-            <div class="content-overlay-v2"></div>
-            <img src="images/virtual/valhalla-fightdruid.png" />
-            <div class="content-details-v2 fadeIn-bottom">
-              <h3 class="content-title">Valhalla</h3>
-            </div>
-          </div>
-        </div>
-        <!-- Grid -->
-        <div class="content">
-          <div class="grid-item" data-bs-toggle="modal" data-bs-target="#valSheep">
-            <div class="content-overlay-v2"></div>
-            <img src="images/virtual/valhalla-sheep.png" />
-            <div class="content-details-v2 fadeIn-bottom">
-              <h3 class="content-title">Valhalla</h3>
-            </div>
-          </div>
-        </div>
-        <!-- Grid -->
-        <div class="content">
-          <div class="grid-item" data-bs-toggle="modal" data-bs-target="#valSunsetRuins">
-            <div class="content-overlay-v2"></div>
-            <img src="images/virtual/valhalla-sunsetruins.png" />
-            <div class="content-details-v2 fadeIn-bottom">
-              <h3 class="content-title">Valhalla</h3>
-            </div>
-          </div>
-        </div>
-        <!-- Grid -->
-        <div class="content">
-          <div class="grid-item" data-bs-toggle="modal" data-bs-target="#valStone">
-            <div class="content-overlay-v2"></div>
-            <img src="images/virtual/valhalla-stone.png" />
-            <div class="content-details-v2 fadeIn-bottom">
-              <h3 class="content-title">Valhalla</h3>
-            </div>
-          </div>
-        </div>
-        <!-- Grid -->
-        <div class="content">
-          <div class="grid-item" data-bs-toggle="modal" data-bs-target="#valExploringRuins">
-            <div class="content-overlay-v2"></div>
-            <img src="images/virtual/valhalla-exploringruins.png" />
-            <div class="content-details-v2 fadeIn-bottom">
-              <h3 class="content-title">Valhalla</h3>
-            </div>
-          </div>
-        </div>
-        <!-- Grid -->
-        <div class="content">
-          <div class="grid-item" data-bs-toggle="modal" data-bs-target="#valAutumnForest">
-            <div class="content-overlay-v2"></div>
-            <img src="images/virtual/valhalla-autumnforest.png" />
-            <div class="content-details-v2 fadeIn-bottom">
-              <h3 class="content-title">Valhalla</h3>
-            </div>
-          </div>
-        </div>
-        <!-- Grid -->
-        <div class="content">
-          <div class="grid-item" data-bs-toggle="modal" data-bs-target="#valStatue">
-            <div class="content-overlay-v2"></div>
-            <img src="images/virtual/valhalla-statue.png" />
-            <div class="content-details-v2 fadeIn-bottom">
-              <h3 class="content-title">Valhalla</h3>
-            </div>
-          </div>
-        </div>
-        <!-- Grid -->
-        <div class="content">
-          <div class="grid-item" data-bs-toggle="modal" data-bs-target="#valMagicalForest">
-            <div class="content-overlay-v2"></div>
-            <img src="images/virtual/valhalla-magicalforest.png" />
-            <div class="content-details-v2 fadeIn-bottom">
-              <h3 class="content-title">Valhalla</h3>
-            </div>
-          </div>
-        </div>
-        <!-- Grid -->
-        <div class="content">
-          <div class="grid-item" data-bs-toggle="modal" data-bs-target="#valPlantPicker">
-            <div class="content-overlay-v2"></div>
-            <img src="images/virtual/valhalla-plantpicker.png" />
-            <div class="content-details-v2 fadeIn-bottom">
-              <h3 class="content-title">Valhalla</h3>
-            </div>
-          </div>
-        </div>
-        <!-- Grid 20 -->
-        <div class="content">
-          <div class="grid-item" data-bs-toggle="modal" data-bs-target="#valBassimPortrait">
-            <div class="content-overlay-v2"></div>
-            <img src="images/virtual/vahalla-bassimportrait.png" />
-            <div class="content-details-v2 fadeIn-bottom">
-              <h3 class="content-title">Valhalla</h3>
-            </div>
-          </div>
-        </div>
-        <!-- Grid Control -->
-        <div class="content">
-          <div class="grid-item" data-bs-toggle="modal" data-bs-target="#controlDirectordeath">
-            <div class="content-overlay-v2"></div>
-            <img src="images/virtual/control-directordeath.png" />
-            <div class="content-details-v2 fadeIn-bottom">
-              <h3 class="content-title">Control</h3>
-            </div>
-          </div>
-        </div>   
-        <!-- Grid Control -->
-        <div class="content">
-          <div class="grid-item" data-bs-toggle="modal" data-bs-target="#controlTrial">
-            <div class="content-overlay-v2"></div>
-            <img src="images/virtual/control-trial.png" />
-            <div class="content-details-v2 fadeIn-bottom">
-              <h3 class="content-title">Control</h3>
-            </div>
-          </div>
-        </div> 
-        <!-- Grid Control -->
-        <div class="content">
-          <div class="grid-item" data-bs-toggle="modal" data-bs-target="#controlTriangle">
-            <div class="content-overlay-v2"></div>
-            <img src="images/virtual/control-triangle.png" />
-            <div class="content-details-v2 fadeIn-bottom">
-              <h3 class="content-title">Control</h3>
-            </div>
-          </div>
-        </div>                        
-        <!-- Grid 7 -->
-        <div class="content">
-          <div class="grid-item" data-bs-toggle="modal" data-bs-target="#portfolioModal8">
-            <div class="content-overlay-v2"></div>
-            <img src="images/virtual/fallenorder-bat.png" />
-            <div class="content-details-v2 fadeIn-bottom">
-              <h3 class="content-title">Fallen Order</h3>
-            </div>
-          </div>
-        </div>
-        <!-- Grid 8 -->
-        <div class="content">
-          <div class="grid-item" data-bs-toggle="modal" data-bs-target="#portfolioModal7">
-            <div class="content-overlay-v2"></div>
-            <img src="images/virtual/fallenorder-cliff.png" />
-            <div class="content-details-v2 fadeIn-bottom">
-              <h3 class="content-title">Fallen Order</h3>
-            </div>
-          </div>
-        </div>
-        <!-- Grid 9 -->
-        <div class="content">
-          <div class="grid-item" data-bs-toggle="modal" data-bs-target="#portfolioModal9">
-            <div class="content-overlay-v2"></div>
-            <img src="images/virtual/fallenorder-bird.png" />
-            <div class="content-details-v2 fadeIn-bottom">
-              <h3 class="content-title">Fallen Order</h3>
-            </div>
-          </div>
-        </div>
-        <!-- Grid 10 -->
-        <div class="content">
-          <div class="grid-item" data-bs-toggle="modal" data-bs-target="#portfolioModal10">
-            <div class="content-overlay-v2"></div>
-            <img src="images/virtual/fallenorder-outofcave.png" />
-            <div class="content-details-v2 fadeIn-bottom">
-              <h3 class="content-title">Fallen Order</h3>
-            </div>
-          </div>
-        </div>
-        <!-- Grid 11 -->
-        <div class="content">
-          <div class="grid-item" data-bs-toggle="modal" data-bs-target="#portfolioModal11">
-            <div class="content-overlay-v2"></div>
-            <img src="images/virtual/fallenorder-ruinedship.png" />
-            <div class="content-details-v2 fadeIn-bottom">
-              <h3 class="content-title">Fallen Order</h3>
-            </div>
-          </div>
-        </div>
-        <!-- Grid 12 -->
-        <div class="content">
-          <div class="grid-item" data-bs-toggle="modal" data-bs-target="#portfolioModal12">
-            <div class="content-overlay-v2"></div>
-            <img src="images/virtual/fallenorder-ships.png" />
-            <div class="content-details-v2 fadeIn-bottom">
-              <h3 class="content-title">Fallen Order</h3>
-            </div>
-          </div>
-        </div>
-        <!-- Grid 13 -->
-        <div class="content">
-          <div class="grid-item" data-bs-toggle="modal" data-bs-target="#portfolioModal13">
-            <div class="content-overlay-v2"></div>
-            <img src="images/virtual/breakpoint-goat.png" />
-            <div class="content-details-v2 fadeIn-bottom">
-              <h3 class="content-title">Breakpoint</h3>
-            </div>
-          </div>
-        </div>        
-        <!-- Grid 14 -->
-        <div class="content">
-          <div class="grid-item" data-bs-toggle="modal" data-bs-target="#portfolioModal14">
-            <div class="content-overlay-v2"></div>
-            <img src="images/virtual/rdr2-bushesshoot.png" />
-            <div class="content-details-v2 fadeIn-bottom">
-              <h3 class="content-title">Red Dead Redemption 2</h3>
-            </div>
-          </div>
-        </div>
-        <!-- Grid 15 -->
-        <div class="content">
-          <div class="grid-item" data-bs-toggle="modal" data-bs-target="#portfolioModal15">
-            <div class="content-overlay-v2"></div>
-            <img src="images/virtual/cyberpunk-nightdrivecity.png" />
-            <div class="content-details-v2 fadeIn-bottom">
-              <h3 class="content-title">Cyberpunk 2077</h3>
-            </div>
-          </div>
-        </div>
-        <!-- Grid 16 -->
-        <div class="content">
-          <div class="grid-item" data-bs-toggle="modal" data-bs-target="#portfolioModal16">
-            <div class="content-overlay-v2"></div>
-            <img src="images/virtual/cyberpunk-jackiewounded.png" />
-            <div class="content-details-v2 fadeIn-bottom">
-              <h3 class="content-title">Cyberpunk 2077</h3>
-            </div>
-          </div>
-        </div>
-        <!-- Grid 17 -->
-        <div class="content">
-          <div class="grid-item" data-bs-toggle="modal" data-bs-target="#portfolioModal17">
-            <div class="content-overlay-v2"></div>
-            <img src="images/virtual/cyberpunk-butcher.png" />
-            <div class="content-details-v2 fadeIn-bottom">
-              <h3 class="content-title">Cyberpunk 2077</h3>
-            </div>
-          </div>
-        </div>
-        <!-- Grid 18 -->
-        <div class="content">
-          <div class="grid-item" data-bs-toggle="modal" data-bs-target="#portfolioModal18">
-            <div class="content-overlay-v2"></div>
-            <img src="images/virtual/cyberpunk-netrunner.png" />
-            <div class="content-details-v2 fadeIn-bottom">
-              <h3 class="content-title">Cyberpunk 2077</h3>
-            </div>
-          </div>
-        </div>
-        <!-- Grid 19 -->
-        <div class="content">
-          <div class="grid-item" data-bs-toggle="modal" data-bs-target="#portfolioModal19">
-            <div class="content-overlay-v2"></div>
-            <img src="images/virtual/cyberpunk-thompson.png" />
-            <div class="content-details-v2 fadeIn-bottom">
-              <h3 class="content-title">Cyberpunk 2077</h3>
-            </div>
-          </div>
-        </div>
+      <a href="images/virtual/vahalla-bassimportrait.png"
+      data-sub-html="<h4>Assassin's Creed Valhalla</h4>" >
+      <div class="lightgallery-wrap"><img src="images/virtual/vahalla-bassimportrait.png" alt=""><p class="lightgallery-description">Assassin's Creed Valhalla</p></div>
+      </a>
 
-      </div>
-  </div>
+      <a href="images/virtual/valhalla-approachingstatue.png"
+      data-sub-html="<h4>Assassin's Creed Valhalla</h4>">
+      <div class="lightgallery-wrap"><img src="images/virtual/valhalla-approachingstatue.png" alt=""><p class="lightgallery-description">Assassin's Creed Valhalla</p></div>
+      </a>
 
+      <a href="images/virtual/valhalla-attackingwolf.png"
+      data-sub-html="<h4>Assassin's Creed Valhalla</h4>">
+      <div class="lightgallery-wrap"><img src="images/virtual/valhalla-attackingwolf.png" alt=""><p class="lightgallery-description">Assassin's Creed Valhalla</p></div>
+      </a>
+
+      <a href="images/virtual/valhalla-autumnforest-1.png"
+      data-sub-html="<h4>Assassin's Creed Valhalla</h4>">
+      <div class="lightgallery-wrap"><img src="images/virtual/valhalla-autumnforest-1.png" alt=""><p class="lightgallery-description">Assassin's Creed Valhalla</p></div>
+      </a>
+
+      <a href="images/virtual/valhalla-bassimfight.png"
+      data-sub-html="<h4>Assassin's Creed Valhalla</h4>">
+      <div class="lightgallery-wrap"><img src="images/virtual/valhalla-bassimfight.png" alt=""><p class="lightgallery-description">Assassin's Creed Valhalla</p></div>
+      </a>
+
+      <a href="images/virtual/valhalla-boat.png"
+      data-sub-html="<h4>Assassin's Creed Valhalla</h4>">
+      <div class="lightgallery-wrap"><img src="images/virtual/valhalla-boat.png" alt=""><p class="lightgallery-description">Assassin's Creed Valhalla</p></div>
+      </a>
+
+      <a href="images/virtual/valhalla-boatlake.png"
+      data-sub-html="<h4>Assassin's Creed Valhalla</h4>">
+      <div class="lightgallery-wrap"><img src="images/virtual/valhalla-boatlake.png" alt=""><p class="lightgallery-description">Assassin's Creed Valhalla</p></div>
+      </a>
+
+      <a href="images/virtual/valhalla-bridge.png"
+      data-sub-html="<h4>Assassin's Creed Valhalla</h4>">
+      <div class="lightgallery-wrap"><img src="images/virtual/valhalla-bridge.png" alt=""><p class="lightgallery-description">Assassin's Creed Valhalla</p></div>
+      </a>
+
+      <a href="images/virtual/valhalla-doorway.jpg"
+      data-sub-html="<h4>Assassin's Creed Valhalla</h4>">
+      <div class="lightgallery-wrap"><img src="images/virtual/valhalla-doorway.jpg" alt=""><p class="lightgallery-description">Assassin's Creed Valhalla</p></div>
+      </a>
+
+      <a href="images/virtual/valhalla-eastanglia-1.png"
+      data-sub-html="<h4>Assassin's Creed Valhalla</h4>">
+      <div class="lightgallery-wrap"><img src="images/virtual/valhalla-eastanglia-1.png" alt=""><p class="lightgallery-description">Assassin's Creed Valhalla</p></div>
+      </a>
+
+      <a href="images/virtual/valhalla-eivorfight-1.png"
+      data-sub-html="<h4>Assassin's Creed Valhalla</h4>">
+      <div class="lightgallery-wrap"><img src="images/virtual/valhalla-eivorfight-1.png" alt=""><p class="lightgallery-description">Assassin's Creed Valhalla</p></div>
+      </a>
+
+      <a href="images/virtual/valhalla-exploringruins-1.png"
+      data-sub-html="<h4>Assassin's Creed Valhalla</h4>">
+      <div class="lightgallery-wrap"><img src="images/virtual/valhalla-exploringruins-1.png" alt=""><p class="lightgallery-description">Assassin's Creed Valhalla</p></div>
+      </a>
+
+      <a href="images/virtual/valhalla-fightdruid.png"
+      data-sub-html="<h4>Assassin's Creed Valhalla</h4>">
+      <div class="lightgallery-wrap"><img src="images/virtual/valhalla-fightdruid.png" alt=""><p class="lightgallery-description">Assassin's Creed Valhalla</p></div>
+      </a>
+
+      <a href="images/virtual/valhalla-graveyardforest-1.png"
+      data-sub-html="<h4>Assassin's Creed Valhalla</h4>">
+      <div class="lightgallery-wrap"><img src="images/virtual/valhalla-graveyardforest-1.png" alt=""><p class="lightgallery-description">Assassin's Creed Valhalla</p></div>
+      </a>
+
+      <a href="images/virtual/valhalla-greentower.png"
+      data-sub-html="<h4>Assassin's Creed Valhalla</h4>">
+      <div class="lightgallery-wrap"><img src="images/virtual/valhalla-greentower.png" alt=""><p class="lightgallery-description">Assassin's Creed Valhalla</p></div>
+      </a>
+
+      <a href="images/virtual/valhalla-magicalforest-1.png"
+      data-sub-html="<h4>Assassin's Creed Valhalla</h4>">
+      <div class="lightgallery-wrap"><img src="images/virtual/valhalla-magicalforest-1.png" alt=""><p class="lightgallery-description">Assassin's Creed Valhalla</p></div>
+      </a>
+
+      <a href="images/virtual/valhalla-mountainfield-1.png"
+      data-sub-html="<h4>Assassin's Creed Valhalla</h4>">
+      <div class="lightgallery-wrap"><img src="images/virtual/valhalla-mountainfield.png" alt=""><p class="lightgallery-description">Assassin's Creed Valhalla</p></div>
+      </a>
+
+      <a href="images/virtual/valhalla-plantpicker-1.png"
+      data-sub-html="<h4>Assassin's Creed Valhalla</h4>">
+      <div class="lightgallery-wrap"><img src="images/virtual/valhalla-plantpicker-1.png" alt=""><p class="lightgallery-description">Assassin's Creed Valhalla</p></div>
+      </a>
+
+      <a href="images/virtual/valhalla-rabbit.png"
+      data-sub-html="<h4>Assassin's Creed Valhalla</h4>">
+      <div class="lightgallery-wrap"><img src="images/virtual/valhalla-rabbit.png" alt=""><p class="lightgallery-description">Assassin's Creed Valhalla</p></div>
+      </a>
+
+      <a href="images/virtual/valhalla-ruinedcolosseum-1.png"
+      data-sub-html="<h4>Assassin's Creed Valhalla</h4>">
+      <div class="lightgallery-wrap"><img src="images/virtual/valhalla-ruinedcolosseum-1.png" alt=""><p class="lightgallery-description">Assassin's Creed Valhalla</p></div>
+      </a>
+
+      <a href="images/virtual/valhalla-sheep-1.png"
+      data-sub-html="<h4>Assassin's Creed Valhalla</h4>">
+      <div class="lightgallery-wrap"><img src="images/virtual/valhalla-sheep-1.png" alt=""><p class="lightgallery-description">Assassin's Creed Valhalla</p></div>
+      </a>
+
+      <a href="images/virtual/valhalla-spookyforest-1.png"
+      data-sub-html="<h4>Assassin's Creed Valhalla</h4>">
+      <div class="lightgallery-wrap"><img src="images/virtual/valhalla-spookyforest-1.png" alt=""><p class="lightgallery-description">Assassin's Creed Valhalla</p></div>
+      </a>
+
+      <a href="images/virtual/valhalla-stone-1.png"
+      data-sub-html="<h4>Assassin's Creed Valhalla</h4>">
+      <div class="lightgallery-wrap"><img src="images/virtual/valhalla-stone-1.png" alt=""><p class="lightgallery-description">Assassin's Creed Valhalla</p></div>
+      </a>
+
+      <a href="images/virtual/valhalla-sunsetboatlake-1.png"
+      data-sub-html="<h4>Assassin's Creed Valhalla</h4>">
+      <div class="lightgallery-wrap"><img src="images/virtual/valhalla-sunsetboatlake-1.png" alt=""><p class="lightgallery-description">Assassin's Creed Valhalla</p></div>
+      </a>
+
+      <a href="images/virtual/valhalla-twowolves-1.png"
+      data-sub-html="<h4>Assassin's Creed Valhalla</h4>">
+      <div class="lightgallery-wrap"><img src="images/virtual/valhalla-twowolves-1.png" alt=""><p class="lightgallery-description">Assassin's Creed Valhalla</p></div>
+      </a>
+
+      <a href="images/virtual/valhalla-warwreckedvillage-1.png"
+      data-sub-html="<h4>Assassin's Creed Valhalla</h4>">
+      <div class="lightgallery-wrap"><img src="images/virtual/valhalla-warwreckedvillage-1.png" alt=""><p class="lightgallery-description">Assassin's Creed Valhalla</p></div>
+      </a>
+
+      <a href="images/virtual/fallenorder-bat.png"
+      data-sub-html="<h4>Star Wars Jedi: Fallen Order</h4>">
+      <div class="lightgallery-wrap"><img src="images/virtual/fallenorder-bat.png" alt=""><p class="lightgallery-description">Star Wars Jedi: Fallen Order</p></div>
+      </a>
+
+      <a href="images/virtual/fallenorder-bird.png"
+      data-sub-html="<h4>Star Wars Jedi: Fallen Order</h4>">
+      <div class="lightgallery-wrap"><img src="images/virtual/fallenorder-bird.png" alt=""><p class="lightgallery-description">Star Wars Jedi: Fallen Order</p></div>
+      </a>
+
+      <a href="images/virtual/fallenorder-cliff.png"
+      data-sub-html="<h4>Star Wars Jedi: Fallen Order</h4>">
+      <div class="lightgallery-wrap"><img src="images/virtual/fallenorder-cliff.png" alt=""><p class="lightgallery-description">Star Wars Jedi: Fallen Order</p></div>
+      </a>
+
+      <a href="images/virtual/fallenorder-outofcave.png"
+      data-sub-html="<h4>Star Wars Jedi: Fallen Order</h4>">
+      <div class="lightgallery-wrap"><img src="images/virtual/fallenorder-outofcave.png" alt=""><p class="lightgallery-description">Star Wars Jedi: Fallen Order</p></div>
+      </a>
+
+      <a href="images/virtual/fallenorder-ruinedship.png"
+      data-sub-html="<h4>Star Wars Jedi: Fallen Order</h4>">
+      <div class="lightgallery-wrap"><img src="images/virtual/fallenorder-ruinedship.png" alt=""><p class="lightgallery-description">Star Wars Jedi: Fallen Order</p></div>
+      </a>
+
+      <a href="images/virtual/fallenorder-ships.png"
+      data-sub-html="<h4>Star Wars Jedi: Fallen Order</h4>">
+      <div class="lightgallery-wrap"><img src="images/virtual/fallenorder-ships.png" alt=""><p class="lightgallery-description">Star Wars Jedi: Fallen Order</p></div>
+      </a>
+
+      <a href="images/virtual/breakpoint-goat.png"
+      data-sub-html="<h4>Ghost Recon Breakpoint</h4>">
+      <div class="lightgallery-wrap"><img src="images/virtual/breakpoint-goat.png" alt=""><p class="lightgallery-description">Ghost Recon Breakpoint</p></div>
+      </a>
+
+      <a href="images/virtual/cyberpunk-butcher.png"
+      data-sub-html="<h4>Cyberpunk 2077</h4>">
+      <div class="lightgallery-wrap"><img src="images/virtual/cyberpunk-butcher.png" alt=""><p class="lightgallery-description">Cyberpunk 2077</p></div>
+      </a>
+
+      <a href="images/virtual/cyberpunk-netrunner.png"
+      data-sub-html="<h4>Cyberpunk 2077</h4>">
+      <div class="lightgallery-wrap"><img src="images/virtual/cyberpunk-netrunner.png" alt=""><p class="lightgallery-description">Cyberpunk 2077</p></div>
+      </a>
+
+      <a href="images/virtual/cyberpunk-nightdrivecity.png"
+      data-sub-html="<h4>Cyberpunk 2077</h4>">
+      <div class="lightgallery-wrap"><img src="images/virtual/cyberpunk-nightdrivecity.png" alt=""><p class="lightgallery-description">Cyberpunk 2077</p></div>
+      </a>
+
+      <a href="images/virtual/cyberpunk-thompson.png"
+      data-sub-html="<h4>Cyberpunk 2077</h4>">
+      <div class="lightgallery-wrap"><img src="images/virtual/cyberpunk-thompson.png" alt=""><p class="lightgallery-description">Cyberpunk 2077</p></div>
+      </a>
+
+      <a href="images/virtual/cyberpunk-takemura.png"
+      data-sub-html="<h4>Cyberpunk 2077</h4>">
+      <div class="lightgallery-wrap"><img src="images/virtual/cyberpunk-takemura.png" alt=""><p class="lightgallery-description">Cyberpunk 2077</p></div>
+      </a>
+    </div>
+</div>
   <footer id="footer" class="py-4 mb-4">
     <ul class="nav justify-content-center pb-1">
       <li class="nav-item"><a class="nav-link px-2" href="mailto: jchung155@gmail.com"><i class="fa-regular fa-envelope"></i></a></li> 
@@ -718,20 +494,27 @@
 </section>
 </div>
 <!-- jQuery -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <!-- Masonry -->
-<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+  <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
 <!-- Bootstrap JavaScript -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous"></script>
 <!-- Bootstrap Lightbox -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js" integrity="sha512-Y2IiVZeaBwXG1wSV7f13plqlmFOx8MdjuHyYFVoYzhyRr3nH/NMDjTBSswijzADdNzMyWNetbLMfOpIPl6Cv9g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <!-- Custom JavaScript -->
-    <script src="js/main.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js" integrity="sha512-Y2IiVZeaBwXG1wSV7f13plqlmFOx8MdjuHyYFVoYzhyRr3nH/NMDjTBSswijzADdNzMyWNetbLMfOpIPl6Cv9g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<!-- Custom JavaScript -->
+  <script src="js/main.js"></script>
+<!-- lightGallery, plugins come after -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.0/lightgallery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.0/plugins/zoom/lg-zoom.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.0/plugins/thumbnail/lg-thumbnail.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.0/plugins/rotate/lg-rotate.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.0/plugins/fullscreen/lg-fullscreen.umd.min.js" ></script>
 
-    <script>
-      $(window).on('load', function () {
-        $('#loading').hide();
-      }) 
-    </script>
+<script type="text/javascript">
+  lightGallery(document.querySelector('.lightgallery'), {
+    mode: 'lg-soft-zoom',
+  } );
+  
+</script>
 </body>
 </html>
