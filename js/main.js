@@ -32,22 +32,19 @@ var scroll = window.pageYOffset || document.documentElement.scrollTop || documen
 
 
 // init Masonry
-var $grid = $('.grid').masonry({
-	itemSelector: '.grid-item',
-	percentPosition: true,
-	columnWidth: '.grid-sizer',
-	isFitWidth: true,
-  horizontalOrder: true,
-  stagger: 30,
-  });
+//var $grid = $('.grid').masonry({
+//	itemSelector: '.grid-item',
+//	percentPosition: true,
+//	columnWidth: '.grid-sizer',
+//	isFitWidth: true,
+//  horizontalOrder: true,
+//  stagger: 30,
+//  });
   
-  // layout Masonry after each image loads
-  $grid.imagesLoaded().progress( function() {
-	$grid.masonry();
-  });
+ 
 
 
-  $(document).ready(function () {
+$(document).ready(function () {
     $('.nav li a').click(function(e) {
 
         $('.nav li.active').removeClass('active');
@@ -109,14 +106,6 @@ class Lightbox{
     
   })
 
-// init Masonry
-var $grid = $('.grid').masonry({
-  // options...
-});
-// layout Masonry after each image loads
-$grid.imagesLoaded().progress( function() {
-  $grid.masonry('layout');
-});
 
 
 
